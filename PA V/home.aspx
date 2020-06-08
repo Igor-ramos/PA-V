@@ -50,7 +50,7 @@
                                 <asp:HiddenField ID="hidID_Tarefa" runat="server" Value='<%# Eval("ID_Tarefas") %>' />
                                 <asp:HiddenField ID="hidImportancia" runat="server" Value='<%# Eval("Importancia") %>' />
                                 <td style="text-align: center;">
-                                    <%--                                    <asp:LinkButton runat="server" ID="lnkApagar" CommandName="Apagar" OnClick="lnkApagar_Click" CommandArgument='<%# Eval("ID_Tarefa") %>' Text="<i class='fa fa-fw fa-trash'></i>" CssClass="btn btn-red" ToolTip="Apagar tarefa"></asp:LinkButton>--%>
+                                    <asp:LinkButton runat="server" ID="lnkApagar" CommandName="Apagar" OnClick="lnkApagar_Click" CommandArgument='<%# Eval("ID_Tarefas") %>' Text="<i class='fa fa-fw fa-trash'></i>" CssClass="btn btn-red" ToolTip="Apagar tarefa"></asp:LinkButton>
                                 </td>
                                 <td style="text-align: center">
                                     <asp:Label runat="server" ID="DT_Status" Text='<%# Convert.ToDateTime(Eval("Data")).ToShortDateString() %>'></asp:Label></td>
@@ -79,6 +79,6 @@
     </div>
     <script>
 
-</script>
+    </script>
 </body>
 

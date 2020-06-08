@@ -29,13 +29,13 @@ namespace PA_V
 
         void PopularRomaneios(int? pageIndex)
         {
-            int ID_User =Convert.ToInt32(Session["user"]);
+            int ID_User = Convert.ToInt32(Session["user"]);
             using (MySqlConnection con = new MySqlConnection(conect))
             {
-                using(MySqlCommand cmd = new MySqlCommand("SELECT * FROM tarefas WHERE ID_User = " + ID_User, con))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM tarefas WHERE ID_User = " + ID_User, con))
                 {
                     cmd.CommandType = CommandType.Text;
-                    using(MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                    using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
                     {
                         using (DataTable dt = new DataTable())
                         {
@@ -47,7 +47,7 @@ namespace PA_V
                         }
                     }
                 }
-            }            
+            }
         }
 
         protected void NewEvent_Click(object sender, EventArgs e)
@@ -94,7 +94,33 @@ namespace PA_V
 
         protected void RptTarefa_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            string sql;
+            if (e.CommandName == "Apagar")
+            {
+                HiddenField hidID_Tarefa = (HiddenField)e.Item.FindControl("hidID_Tarefa");
 
+                sql = "DELETE FROM tarefas WHERE ID_Tarefas = " + hidID_Tarefa.Value;
+
+                using (MySqlConnection con = new MySqlConnection(conect))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                        {
+                            using (DataTable dt = new DataTable())
+                            {
+                                {
+                                    sda.Fill(dt);
+                                    RptTarefa.DataSource = dt;
+                                    RptTarefa.DataBind();
+                                }
+                            }
+                        }
+                    }
+                }
+                PopularRomaneios();
+            }
         }
 
         protected void RptTarefa_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -138,3 +164,4 @@ namespace PA_V
         }
     }
 }
+
