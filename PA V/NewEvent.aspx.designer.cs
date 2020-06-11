@@ -24,13 +24,13 @@ namespace PA_V
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controle importancia.
+        /// Controle ddlimportancia.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList importancia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlimportancia;
 
         /// <summary>
         /// Controle Adiciona.

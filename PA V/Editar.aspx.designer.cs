@@ -11,7 +11,7 @@ namespace PA_V
 {
 
 
-    public partial class home
+    public partial class Editar
     {
 
         /// <summary>
@@ -24,21 +24,30 @@ namespace PA_V
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controle RptTarefa.
+        /// Controle Nome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptTarefa;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Nome;
 
         /// <summary>
-        /// Controle NewEvent.
+        /// Controle ddlimportancia.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NewEvent;
+        protected global::System.Web.UI.WebControls.DropDownList ddlimportancia;
+
+        /// <summary>
+        /// Controle salvar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button salvar;
     }
 }

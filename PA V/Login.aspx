@@ -34,9 +34,14 @@
                      <input type="password" class="form-control" name="Senha" id="Senha" placeholder="Password">
                   </div>
                   <asp:Button runat="server" ID="login" type="submit" Onclick="login_Click" class="btn btn-black" Text="Login" />
-                  <asp:Button runat="server" ID="register" OnClick="register_Click" type="submit" class="btn btn-black" Text="Register" />                   
+                  <asp:Button runat="server" ID="register" OnClick="register_Click" type="submit" class="btn btn-black" Text="Register" /> 
                </form>
             </div>
          </div>
+          <br /><br /><br /><br /><br /><br />
+        <footer class="main-footer">
+            <b>Versão AC2 - </b>
+            <strong>Copyright &copy; 2020 Sua Agenda Pessoal.</strong> Todos os direitos reservados.
+        </footer>
       </div>
     </body>

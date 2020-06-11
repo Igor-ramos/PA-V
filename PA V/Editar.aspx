@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewEvent.aspx.cs" Inherits="PA_V.NewEvent" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editar.aspx.cs" Inherits="PA_V.Editar" %>
+
 
 <!DOCTYPE html>
 
@@ -17,17 +18,16 @@
     <div class="sidenav">
         <div class="login-main-text">
             <h2><strong style="color: #daa520">Sua Agenda Pessoal</strong></h2>
-            <h3>Tela de login</h3>
-            <p>Entre ou se registre agora.</p>
+            <h3>Editar Evento</h3>
         </div>
     </div>
     <div class="main">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
-                <form id="form1" runat="server">
+                <form id="form1" runat="server" method="post">
                     <div class="form-group">
                         <label>Título</label>
-                        <input type="text" class="form-control" name="Nome" id="Nome" placeholder="Título do comprimisso">
+                        <input type="text" runat="server" class="form-control" name="Nome" id="Nome" placeholder="Título do comprimisso" required="">
                     </div>
                     <div class="form-group">
                         <label>Data</label>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label>Descrição</label>
-                        <input type="text" class="form-control" name="Descricao" id="Descricao" placeholder="Descreva">
+                        <input type="text" class="form-control" name="Descricao" id="Descricao" placeholder="Descreva" required="">
                     </div>
                     <div class="form-group">
                         <label>Importância</label>
@@ -46,11 +46,20 @@
                             <asp:ListItem Value="3">SUPREMA</asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    <asp:Button runat="server" ID="Adiciona" type="submit" OnClick="Adiciona_Click" class="btn btn-black" Text="Adicionar" />
-                    <asp:Button runat="server" ID="voltar" OnClick="voltar_Click" type="submit" class="btn btn-black" Text="Votlar" />
+                    <asp:Button runat="server" ID="salvar" type="submit" OnClick="salvar_Click" class="btn btn-black" Text="Salvar" />
+                    <a href="home.aspx" type="button" class="btn btn-black">Voltar</a>
                 </form>
             </div>
         </div>
+        <br />
+        <footer class="main-footer">
+            <b>Versão AC2 - </b>
+            <strong>Copyright &copy; 2020 Sua Agenda Pessoal.</strong> Todos os direitos reservados.
+        </footer>
     </div>
+    <script>
+
+    </script>
 </body>
+
 
