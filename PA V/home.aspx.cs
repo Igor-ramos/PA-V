@@ -68,7 +68,7 @@ namespace PA_V
 
             using (MySqlConnection con = new MySqlConnection(conect))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT *, (SELECT nome FROM tarefa_status S INNER JOIN tarefas T ON S.ID_Status = T.Importancia) AS status FROM tarefas WHERE ID_User = " + ID_User, con))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT *, (SELECT nome FROM importancia I INNER JOIN tarefas T ON I.ID_Status = T.importancia ) AS status FROM tarefas WHERE ID_User = " + ID_User, con))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))

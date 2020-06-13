@@ -36,10 +36,9 @@
                         <HeaderTemplate>
                             <table id="example" class="table table-bordered table-striped" style="width: 600px">
                                 <thead>
-                                    <tr style="width: 100%;background-color: darkgray;">
+                                    <tr style="width: 100%; background-color: darkgray;">
                                         <th class="text-center">Ação</th>
                                         <th class="text-center">Data</th>
-                                        <th class="text-center">Importância</th>
                                         <th class="text-center">Nome</th>
                                         <th class="text-center">Descrição</th>
                                     </tr>
@@ -48,15 +47,14 @@
                         <ItemTemplate>
                             <tr id="styT" runat="server" class="table table-hover" style="width: 100%;">
                                 <td style="text-align: center;">
-                                    <asp:LinkButton runat="server" ID="lnkApagar" CommandName="Apagar" style="color: red" OnClick="lnkApagar_Click" CommandArgument='<%# Eval("ID_Tarefas") %>' CssClass="btn btn-red" ToolTip="Apagar tarefa">✖</asp:LinkButton>
+                                    <asp:LinkButton runat="server" ID="lnkApagar" CommandName="Apagar" Style="color: red" OnClick="lnkApagar_Click" CommandArgument='<%# Eval("ID_Tarefas") %>' CssClass="btn btn-red" ToolTip="Apagar tarefa">✖</asp:LinkButton>
                                     <asp:LinkButton runat="server" ID="lnkEditar" CommandName="Editar" CommandArgument='<%# Eval("ID_Tarefas") %>' CssClass="btn btn-red" ToolTip="Editar Tarefa">✍</asp:LinkButton>
                                     <asp:HiddenField ID="hidID_Tarefa" runat="server" Value='<%# Eval("ID_Tarefas") %>' />
                                     <asp:HiddenField ID="hidImportancia" runat="server" Value='<%# Eval("Importancia") %>' />
                                 </td>
                                 <td style="text-align: center">
                                     <asp:Label runat="server" ID="DT_Status" Text='<%# Convert.ToDateTime(Eval("Data")).ToShortDateString() %>'></asp:Label></td>
-                                <td style="text-align: center"><span class='label tipo<%# Eval("Importancia")%>'>
-                                    <asp:Label runat="server" ID="Importancia" Text='<%# Eval("status") %>' CausesValidation="True"></asp:Label></td>
+
                                 <td style="text-align: center">
                                     <asp:Label runat="server" ID="DC_Artigo" Text='<%# Eval("Tarefa_Nome") %>'></asp:Label></td>
                                 <td style="text-align: center">
@@ -64,9 +62,20 @@
                             </tr>
                         </ItemTemplate>
                         <FooterTemplate>
+                          
                             </table>
                         </FooterTemplate>
                     </asp:Repeater>
+                        <div class="box">
+                            <table class="table table-striped";>
+                                <tr>
+                                    <td>Legenda de importancia:</td>
+                                    <td style="background-color:lightgreen;"><b>NORMAL</b></td>
+                                    <td style="background-color:khaki;"><b>IMPORTANTE</b></td>
+                                    <td style="background-color:salmon;"><b>URGÊNCIA</b></td>
+                                </tr>
+                             </table>
+                        </div>
                     <asp:Button runat="server" ID="NewEvent" type="submit" OnClick="NewEvent_Click" class="btn btn-black" Text="Novo Evento" />
                 </form>
             </div>
@@ -79,6 +88,6 @@
     </div>
     <script>
 
-    </script>
+</script>
 </body>
 
